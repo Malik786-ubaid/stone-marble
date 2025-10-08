@@ -16,8 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans bg-white text-gray-900">
+        {/* Navbar with mobile-friendly hamburger menu */}
         <Navbar />
+
+        {/* Page content with top padding to prevent overlap */}
         <main className="pt-20">{children}</main>
+
+        {/* Footer */}
         <Footer />
       </body>
     </html>

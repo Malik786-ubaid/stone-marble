@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div className="bg-white">
-      {/* 🌄 Hero Section */}
+    
       <section className="relative h-[80vh] flex items-center justify-center text-center text-white">
         <Image
           src="/images/product1.jpg"
@@ -32,7 +32,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🪨 About Section */}
+      
       <section className="py-20 px-6 text-center max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold mb-6 text-gray-900">
           About Stone Marble
@@ -45,7 +45,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* 🧱 Products Section */}
+  
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-10 text-gray-900">
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 📞 Contact Section */}
+  
       <section className="py-20 bg-gray-100 text-center px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-gray-900">Contact Us</h2>
