@@ -1,5 +1,4 @@
-"use client";
-
+'use client';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -11,26 +10,20 @@ export default function Navbar() {
     { name: "Stones", path: "/stones" },
     { name: "Interior", path: "/interior" },
     { name: "Exterior", path: "/exterior" },
+    { name: "About", path: "/about" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo / Title */}
-        <h1 className="text-2xl font-extrabold text-gray-800 tracking-wide">
-          Nafees Chakwal Stone
-        </h1>
-
-        {/* Nav Links */}
-        <ul className="flex space-x-8">
+        <div className="text-2xl font-bold text-gray-900">Stone Marble</div>
+        <ul className="flex space-x-6">
           {navItems.map((item) => (
-            <li key={item.path}>
+            <li key={item.name}>
               <Link
                 href={item.path}
-                className={`font-semibold text-lg transition-all duration-300 ${
-                  pathname === item.path
-                    ? "text-yellow-600 border-b-2 border-yellow-600 pb-1"
-                    : "text-gray-700 hover:text-yellow-600"
+                className={`text-gray-700 hover:text-gray-900 font-semibold ${
+                  pathname === item.path ? "text-yellow-600" : ""
                 }`}
               >
                 {item.name}

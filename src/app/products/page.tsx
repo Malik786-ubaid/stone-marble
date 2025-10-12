@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 export default function Products() {
-  // 15 new stones (product20.jpeg → product33.jpeg)
   const products = [
     "Golden",
     "Silky Grey",

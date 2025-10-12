@@ -1,9 +1,8 @@
-"use client";
+'use client';
 import { useState } from "react";
 import Image from "next/image";
 
-export default function StonesPage() {
-  // ✅ Stone Data
+export default function StonePage() {
   const stones = [
     { id: 20, name: "Golden", category: "Golden" },
     { id: 21, name: "Silky Grey", category: "Grey" },
@@ -21,11 +20,9 @@ export default function StonesPage() {
     { id: 33, name: "Singhara", category: "Brown" },
   ];
 
-  // ✅ Categories
   const categories = ["All", "Golden", "Grey", "Black", "White", "Red", "Brown"];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  // ✅ Filter Logic
   const filteredStones =
     selectedCategory === "All"
       ? stones
@@ -33,12 +30,10 @@ export default function StonesPage() {
 
   return (
     <main className="min-h-screen bg-gray-50 pt-28 px-6">
-      {/* Heading */}
       <h1 className="text-4xl font-bold text-center text-gray-900 mb-10">
         Our Stone Collection
       </h1>
 
-      {/* Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {categories.map((cat) => (
           <button
@@ -55,7 +50,6 @@ export default function StonesPage() {
         ))}
       </div>
 
-      {/* Stones Grid */}
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {filteredStones.map((stone) => (
           <div
@@ -63,7 +57,7 @@ export default function StonesPage() {
             className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"
           >
             <Image
-              src={`/marble images/product${stone.id}.jpeg`}
+              src={`/marble-images/product${stone.id}.jpeg`}
               alt={stone.name}
               width={400}
               height={300}
@@ -79,7 +73,6 @@ export default function StonesPage() {
         ))}
       </section>
 
-      {/* Empty State */}
       {filteredStones.length === 0 && (
         <p className="text-center text-gray-500 mt-10 text-lg">
           No stones found for this category.
