@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <div className="bg-white">
 
-      <section className="relative h-[80vh] flex items-center justify-center text-center text-white">
+    
+      <section className="relative h-[75vh] sm:h-[80vh] flex items-center justify-center text-center text-white">
         <Image
           src="/images/product2.jpg"
           alt="Stone Marble Hero"
@@ -17,22 +18,22 @@ export default function Home() {
           className="object-cover brightness-75"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/40"></div>
-        <div className="relative z-10 px-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+        <div className="relative z-10 px-4 sm:px-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
             Premium Stone & Marble Collection
           </h1>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">
+          <p className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">
             Bringing natural beauty and timeless elegance to your spaces.
           </p>
-          
         </div>
       </section>
 
-      <section className="py-20 px-6 text-center max-w-5xl mx-auto">
-        <h2 className="text-4xl font-bold mb-6 text-gray-900">
+    
+      <section className="py-16 sm:py-20 px-4 sm:px-6 text-center max-w-5xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
           About Stone Marble
         </h2>
-        <p className="text-gray-600 text-lg leading-relaxed">
+        <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
           At Stone Marble, we specialize in providing premium quality marble,
           granite, and natural stones sourced from the finest quarries. Our
           products are designed to enhance both residential and commercial
@@ -40,12 +41,13 @@ export default function Home() {
         </p>
       </section>
 
+  
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-10 text-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-gray-900">
             Our Featured Products
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {[2, 3, 4].map((num) => (
               <div
                 key={num}
@@ -56,13 +58,13 @@ export default function Home() {
                   alt={`Product ${num}`}
                   width={400}
                   height={300}
-                  className="object-cover w-full h-64"
+                  className="object-cover w-full h-56 sm:h-64"
                 />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                <div className="p-4 sm:p-5">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
                     Premium Marble {num}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-600 text-sm sm:text-base">
                     Elegant and durable stone for interiors and exteriors.
                   </p>
                 </div>
@@ -72,10 +74,10 @@ export default function Home() {
         </div>
       </section>
 
-    
-      <section className="py-20 px-6">
+  
+      <section className="py-16 sm:py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-10 text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-gray-900">
             Our Gallery
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -86,7 +88,7 @@ export default function Home() {
                   alt={`Gallery ${num}`}
                   width={400}
                   height={300}
-                  className="object-cover w-full h-64 hover:scale-105 transition-transform duration-500"
+                  className="object-cover w-full h-56 sm:h-64 hover:scale-105 transition-transform duration-500"
                 />
               </div>
             ))}
@@ -94,11 +96,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-100 text-center px-6">
+      
+      <section className="py-16 sm:py-20 bg-gray-100 text-center px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-6 text-gray-900">Contact Us</h2>
-          <p className="text-gray-600 text-lg mb-8">
-            Have any questions or want to order premium marble?
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
+            Contact Us
+          </h2>
+          <p className="text-gray-600 text-base sm:text-lg mb-8">
+            Have any questions or want to order premium marble? <br />
             Contact us directly on WhatsApp — we’d love to help!
           </p>
 
@@ -106,12 +111,12 @@ export default function Home() {
             href="https://wa.me/923485874072"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-green-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition"
+            className="inline-block bg-green-600 text-white px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-green-700 transition"
           >
             💬 Chat on WhatsApp
           </a>
 
-          <div className="mt-8 text-gray-700">
+          <div className="mt-8 text-gray-700 text-sm sm:text-base">
             <p>📞 Phone: +92 3455005530</p>
           </div>
         </div>
