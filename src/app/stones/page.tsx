@@ -29,17 +29,17 @@ export default function StonePage() {
       : stones.filter((stone) => stone.category === selectedCategory);
 
   return (
-    <main className="min-h-screen bg-gray-50 pt-28 px-6">
-      <h1 className="text-4xl font-bold text-center text-gray-900 mb-10">
+    <main className="min-h-screen bg-gray-50 pt-28 px-4 sm:px-6">
+      <h1 className="text-4xl sm:text-5xl font-bold text-center text-gray-900 mb-10">
         Our Stone Collection
       </h1>
 
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-6 py-2 rounded-full font-semibold border transition-all duration-300 ${
+            className={`px-5 sm:px-6 py-2 rounded-full font-semibold border transition-all duration-300 ${
               selectedCategory === cat
                 ? "bg-yellow-600 text-white border-yellow-600"
                 : "bg-white text-gray-700 hover:bg-yellow-100 border-gray-300"
@@ -50,21 +50,21 @@ export default function StonePage() {
         ))}
       </div>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
         {filteredStones.map((stone) => (
           <div
             key={stone.id}
-            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-1"
           >
             <Image
               src={`/marble-images/product${stone.id}.jpeg`}
               alt={stone.name}
               width={400}
               height={300}
-              className="object-cover w-full h-64 hover:scale-110 transition-transform duration-500"
+              className="object-cover w-full h-64 hover:scale-105 transition-transform duration-500"
             />
             <div className="p-4 text-center">
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
                 {stone.name}
               </h3>
               <p className="text-gray-500 text-sm">{stone.category} Stone</p>
@@ -73,6 +73,7 @@ export default function StonePage() {
         ))}
       </section>
 
+  
       {filteredStones.length === 0 && (
         <p className="text-center text-gray-500 mt-10 text-lg">
           No stones found for this category.
