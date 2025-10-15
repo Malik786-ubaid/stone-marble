@@ -16,9 +16,13 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<<<<<<< HEAD
         {/* Updated logo/text */}
         <div className="text-2xl font-bold text-gray-900">Islamabad Chakwal Stone</div>
 
+=======
+        <div className="text-2xl font-bold text-gray-900">Islamabad Chakwal Stone</div>
+>>>>>>> a3aa92174b0f1c9b0936cf10e4d7b8b9e604c528
         <ul className="flex space-x-6">
           {navItems.map((item) => (
             <li key={item.name}>
