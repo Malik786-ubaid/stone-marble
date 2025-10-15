@@ -112,7 +112,7 @@ export default function Home() {
           </a>
 
           <div className="mt-8 text-gray-700">
-            <p>📞 Phone: +92 348 5874072</p>
+            <p>📞 Phone: +92 3455005530</p>
           </div>
         </div>
       </section>
