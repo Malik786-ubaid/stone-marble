@@ -12,17 +12,17 @@ export default function ExteriorPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-28 px-6">
-      <h1 className="text-4xl font-bold text-center text-gray-900 mb-10">
+    <div className="min-h-screen bg-gray-50 pt-24 sm:pt-28 px-4 sm:px-6">
+      <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-10">
         Exterior Design Gallery
       </h1>
 
-      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-8 sm:mb-10 text-sm sm:text-base">
         Discover elegant exterior designs made with natural marble and stone.
         Perfect for villas, pathways, gardens, and outdoor living spaces.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
         {exteriors.map((item) => (
           <div
             key={item.id}
@@ -34,11 +34,11 @@ export default function ExteriorPage() {
                 alt={item.name}
                 width={400}
                 height={300}
-                className="object-cover w-full h-64 hover:scale-110 transition-transform duration-500"
+                className="object-cover w-full h-60 sm:h-64 hover:scale-110 transition-transform duration-500"
               />
             </div>
             <div className="p-4 text-center">
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
                 {item.name}
               </h3>
               <p className="text-gray-500 text-sm">{item.desc}</p>
@@ -49,3 +49,4 @@ export default function ExteriorPage() {
     </div>
   );
 }
+
