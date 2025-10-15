@@ -12,21 +12,24 @@ export default function InteriorPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-28 px-6">
-      <h1 className="text-4xl font-bold text-center text-gray-900 mb-10">
+    <main className="min-h-screen bg-gray-50 pt-28 px-4 sm:px-6">
+      
+      <h1 className="text-4xl sm:text-5xl font-bold text-center text-gray-900 mb-8">
         Interior Design Gallery
       </h1>
 
-      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+    
+      <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12 text-base sm:text-lg leading-relaxed">
         Explore our interior design inspirations crafted with premium marble and stone.
         From modern bedrooms to luxurious living spaces — we bring elegance to every detail.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
         {interiors.map((item) => (
           <div
             key={item.id}
-            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition"
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-1"
           >
             <div className="overflow-hidden">
               <Image
@@ -34,18 +37,18 @@ export default function InteriorPage() {
                 alt={item.name}
                 width={400}
                 height={300}
-                className="object-cover w-full h-64 hover:scale-110 transition-transform duration-500"
+                className="object-cover w-full h-64 hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="p-4 text-center">
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">
+            <div className="p-5 text-center">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
                 {item.name}
               </h3>
-              <p className="text-gray-500 text-sm">{item.desc}</p>
+              <p className="text-gray-500 text-sm sm:text-base">{item.desc}</p>
             </div>
           </div>
         ))}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
