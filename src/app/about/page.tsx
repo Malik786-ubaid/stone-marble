@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <div className="bg-white text-gray-800">
-      {/* Hero Section */}
+      
       <section className="relative h-[55vh] flex items-center justify-center text-center text-white">
         <Image
           src="/images/product10.jpg"
@@ -24,7 +24,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* About Us Section */}
       <section className="py-20 px-6 max-w-5xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6 text-gray-900">About Us</h2>
         <p className="text-gray-600 text-lg leading-relaxed">
@@ -34,16 +33,16 @@ export default function About() {
         </p>
       </section>
 
-      {/* Location Section */}
+      
       <section className="py-16 px-6 bg-gray-50 text-center max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold mb-6 text-gray-900">Our Location</h2>
 
-        {/* Address */}
+      
         <p className="text-gray-600 text-lg mb-8">
           Industrial Area, New Chak Madad Khan, Near Railway Phatak, Westridge II, Rawalpindi
         </p>
 
-        {/* Showroom Image */}
+        
         <div className="mb-10 flex justify-center">
           <div className="relative w-full max-w-3xl h-64 md:h-96 rounded-xl overflow-hidden shadow-lg">
             <Image
@@ -55,7 +54,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Embedded Google Map */}
+      
         <div className="flex justify-center">
           <iframe
             src="https://www.google.com/maps?q=33.6252,73.0186&z=15&output=embed"
@@ -67,7 +66,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Contact Section */}
+
       <section className="py-16 px-6 text-center max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold mb-6 text-gray-900">Contact Us</h2>
 
