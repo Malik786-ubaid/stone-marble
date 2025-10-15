@@ -16,7 +16,7 @@ export default function About() {
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 px-4">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
-            Awais Marble & Chakwal Stone Showroom
+            Awais Marble & Chakwal Stone
           </h1>
           <p className="text-lg md:text-2xl max-w-2xl mx-auto drop-shadow-md">
             Transforming Spaces with Premium Marble & Natural Stones
