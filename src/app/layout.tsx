@@ -15,14 +15,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans bg-white text-gray-900">
-        {/* Navbar with mobile-friendly hamburger menu */}
+      <body className="font-sans bg-white text-gray-900 flex flex-col min-h-screen">
+      
         <Navbar />
 
-        {/* Page content with top padding to prevent overlap */}
-        <main className="pt-20">{children}</main>
+        
+        <main className="flex-grow pt-24 sm:pt-28 px-4 sm:px-6">
+          {children}
+        </main>
 
-        {/* Footer */}
+      
         <Footer />
       </body>
     </html>
