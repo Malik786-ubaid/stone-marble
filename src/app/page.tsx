@@ -1,14 +1,12 @@
 'use client';
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-export default function Home() {
-  const router = useRouter();
-
+export default function HomePage() {
   return (
     <div className="bg-white">
 
-    
+      
       <section className="relative h-[75vh] sm:h-[80vh] flex items-center justify-center text-center text-white">
         <Image
           src="/images/product2.jpg"
@@ -28,7 +26,7 @@ export default function Home() {
         </div>
       </section>
 
-    
+      
       <section className="py-16 sm:py-20 px-4 sm:px-6 text-center max-w-5xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
           About Stone Marble
@@ -36,67 +34,92 @@ export default function Home() {
         <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
           At Stone Marble, we specialize in providing premium quality marble,
           granite, and natural stones sourced from the finest quarries. Our
-          products are designed to enhance both residential and commercial
-          spaces with luxury, durability, and style.
+          products enhance both residential and commercial spaces with luxury,
+          durability, and style.
         </p>
       </section>
 
-  
+    
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-gray-900">
-            Our Featured Products
+            Featured Stones
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-            {[2, 3, 4].map((num) => (
-              <div
-                key={num}
-                className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition"
-              >
-                <Image
-                  src={`/images/product${num}.jpg`}
-                  alt={`Product ${num}`}
-                  width={400}
-                  height={300}
-                  className="object-cover w-full h-56 sm:h-64"
-                />
-                <div className="p-4 sm:p-5">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
-                    Premium Marble {num}
-                  </h3>
-                  <p className="text-gray-600 text-sm sm:text-base">
-                    Elegant and durable stone for interiors and exteriors.
-                  </p>
+            {[20, 21, 22].map((id) => (
+              <Link key={id} href={`/image/${id}`}>
+                <div className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition cursor-pointer">
+                  <Image
+                    src={`/marble-images/product${id}.jpeg`}
+                    alt={`Stone ${id}`}
+                    width={400}
+                    height={300}
+                    className="object-cover w-full h-56 sm:h-64 hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="p-4 sm:p-5">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+                      Premium Marble {id}
+                    </h3>
+                    <p className="text-gray-600 text-sm sm:text-base">
+                      Elegant and durable stone for interiors and exteriors.
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    
+      <section className="py-16 sm:py-20 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-gray-900">
+            Interior Highlights
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((id) => (
+              <Link key={id} href={`/image/${id}`}>
+                <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl cursor-pointer transition transform hover:-translate-y-1">
+                  <Image
+                    src={`/interior/interior${id}.jpeg`}
+                    alt={`Interior ${id}`}
+                    width={400}
+                    height={300}
+                    className="object-cover w-full h-64 hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
   
-      <section className="py-16 sm:py-20 px-4 sm:px-6">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-gray-900">
-            Our Gallery
+            Exterior Highlights
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[5, 6, 7].map((num) => (
-              <div key={num} className="overflow-hidden rounded-lg shadow-md">
-                <Image
-                  src={`/images/product${num}.jpg`}
-                  alt={`Gallery ${num}`}
-                  width={400}
-                  height={300}
-                  className="object-cover w-full h-56 sm:h-64 hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+            {[7, 8, 9].map((id) => (
+              <Link key={id} href={`/image/${id}`}>
+                <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl cursor-pointer transition transform hover:-translate-y-1">
+                  <Image
+                    src={`/exterior/exterior${id}.jpeg`}
+                    alt={`Exterior ${id}`}
+                    width={400}
+                    height={300}
+                    className="object-cover w-full h-64 hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      
+    
       <section className="py-16 sm:py-20 bg-gray-100 text-center px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
