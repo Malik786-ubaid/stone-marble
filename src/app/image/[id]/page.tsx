@@ -29,24 +29,25 @@ export default function ImageDetailPage() {
   if (!image) return <div className="p-10 text-center text-xl">Image not found.</div>;
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="w-full max-w-[1000px] bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row">
-        
-        {/* Left: Image (Square & No Gaps) */}
-        <div className="w-full md:w-1/2 aspect-square relative">
-          <Image
-            src={image.src}
-            alt={image.title}
-            fill
-            className="object-cover"
-          />
+    <div className="h-screen bg-gray-100 flex items-center justify-center">
+      <div className="bg-white shadow-lg rounded-2xl flex flex-col md:flex-row max-w-4xl w-full h-[70vh] overflow-hidden">
+        {/* Image Section */}
+        <div className="md:w-1/2 flex items-center justify-center p-4 bg-gray-50">
+          <div className="relative w-[300px] h-[300px]">
+            <Image
+              src={image.src}
+              alt={image.title}
+              fill
+              className="object-cover rounded-xl"
+            />
+          </div>
         </div>
 
-        {/* Right: Details */}
-        <div className="w-full md:w-1/2 p-6 flex flex-col justify-center">
+        {/* Details Section */}
+        <div className="md:w-1/2 p-6 flex flex-col justify-center">
           <h1 className="text-2xl font-bold text-gray-800 mb-3">{image.title}</h1>
-          <p className="text-gray-700 mb-4">{image.description}</p>
-          <p className="text-sm text-gray-500 mb-5">Category: {image.category}</p>
+          <p className="text-gray-700 mb-4 leading-relaxed">{image.description}</p>
+          <p className="text-sm text-gray-500 mb-6">Category: {image.category}</p>
 
           {!showContact ? (
             <button
