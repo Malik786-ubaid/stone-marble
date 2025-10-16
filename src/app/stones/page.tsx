@@ -1,6 +1,7 @@
 'use client';
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function StonePage() {
   const stones = [
@@ -34,6 +35,7 @@ export default function StonePage() {
         Our Stone Collection
       </h1>
 
+      {/* Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
         {categories.map((cat) => (
           <button
@@ -50,30 +52,29 @@ export default function StonePage() {
         ))}
       </div>
 
+
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
         {filteredStones.map((stone) => (
-          <div
-            key={stone.id}
-            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-1"
-          >
-            <Image
-              src={`/marble-images/product${stone.id}.jpeg`}
-              alt={stone.name}
-              width={400}
-              height={300}
-              className="object-cover w-full h-64 hover:scale-105 transition-transform duration-500"
-            />
-            <div className="p-4 text-center">
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
-                {stone.name}
-              </h3>
-              <p className="text-gray-500 text-sm">{stone.category} Stone</p>
+          <Link key={stone.id} href={`/image/${stone.id}`}>
+            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-1 cursor-pointer">
+              <Image
+                src={`/marble-images/product${stone.id}.jpeg`}
+                alt={stone.name}
+                width={400}
+                height={300}
+                className="object-cover w-full h-64 hover:scale-105 transition-transform duration-500"
+              />
+              <div className="p-4 text-center">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-1">
+                  {stone.name}
+                </h3>
+                <p className="text-gray-500 text-sm">{stone.category} Stone</p>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </section>
 
-  
       {filteredStones.length === 0 && (
         <p className="text-center text-gray-500 mt-10 text-lg">
           No stones found for this category.
