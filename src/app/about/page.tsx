@@ -54,16 +54,13 @@ export default function About() {
           </div>
         </div>
 
-      
-        <div className="flex justify-center">
-          <iframe
-            src="https://www.google.com/maps?q=33.6252,73.0186&z=15&output=embed"
-            width="100%"
-            height="400"
-            style={{ border: 0, borderRadius: '12px', maxWidth: '900px' }}
-            loading="lazy"
-          ></iframe>
-        </div>
+     <div className="w-full flex justify-center">
+  <iframe
+    src="https://www.google.com/maps?q=33.6252,73.0186&z=15&output=embed"
+    className="w-full max-w-3xl h-96 rounded-xl border-0"
+    loading="lazy"
+  ></iframe>
+</div>
       </section>
 
 
