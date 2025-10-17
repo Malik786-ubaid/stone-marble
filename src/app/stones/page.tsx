@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function StonePage() {
+  
   const stones = [
     { id: 20, name: "Golden", category: "Golden" },
     { id: 21, name: "Silky Grey", category: "Grey" },
@@ -21,8 +22,10 @@ export default function StonePage() {
     { id: 33, name: "Singhara", category: "Brown" },
   ];
 
+
   const categories = ["All", "Golden", "Grey", "Black", "White", "Red", "Brown"];
   const [selectedCategory, setSelectedCategory] = useState("All");
+
 
   const filteredStones =
     selectedCategory === "All"
@@ -35,7 +38,7 @@ export default function StonePage() {
         Our Stone Collection
       </h1>
 
-      {/* Filter Buttons */}
+    
       <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
         {categories.map((cat) => (
           <button
@@ -52,7 +55,7 @@ export default function StonePage() {
         ))}
       </div>
 
-
+      
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
         {filteredStones.map((stone) => (
           <Link key={stone.id} href={`/image/${stone.id}`}>
@@ -75,6 +78,7 @@ export default function StonePage() {
         ))}
       </section>
 
+      
       {filteredStones.length === 0 && (
         <p className="text-center text-gray-500 mt-10 text-lg">
           No stones found for this category.
