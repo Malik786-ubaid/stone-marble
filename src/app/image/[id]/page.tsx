@@ -1,79 +1,76 @@
 'use client';
-import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
-import Image from "next/image";
+import { useParams } from 'next/navigation';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
-type Product = {
+interface Product {
   id: number;
   title: string;
   category: string;
   description: string;
   src: string;
-};
+}
 
-export default function ProductPage() {
-  const params = useParams();
-  const router = useRouter();
+export default function ProductDetail() {
+  const { id } = useParams();
   const [product, setProduct] = useState<Product | null>(null);
 
   useEffect(() => {
-    async function fetchProduct() {
-      const res = await fetch("/products.json");
-      const data: Product[] = await res.json();
-      const prod = data.find((p) => p.id === Number(params.id));
-      if (prod) setProduct(prod);
-    }
-    fetchProduct();
-  }, [params.id]);
+    fetch('/products.json')
+      .then((res) => res.json())
+      .then((data: Product[]) => {
+        const found = data.find((item) => item.id === Number(id));
+        setProduct(found || null);
+      });
+  }, [id]);
 
-  if (!product) return <p className="text-center mt-20">Loading...</p>;
+  if (!product) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-white">
+        <h1 className="text-2xl font-semibold text-gray-700">
+          Product not found
+        </h1>
+      </div>
+    );
+  }
 
   return (
-    <main className="fixed inset-0 bg-gray-900/90 flex items-center justify-center z-50 p-4 overflow-auto">
-      <div className="relative flex flex-col md:flex-row max-w-6xl w-full bg-transparent">
+    <div className="min-h-screen bg-white flex items-center justify-center px-6 py-10">
+      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl">
         
-        <div className="flex-shrink-0 w-full md:w-1/2">
-          <div className="relative w-full h-80 md:h-[500px]">
+    
+        <div className="md:w-1/2 flex justify-center">
+          <div className="w-[400px] h-[400px] relative">
             <Image
               src={product.src}
               alt={product.title}
               fill
-              className="object-cover rounded-lg"
+              className="object-cover rounded-xl"
             />
           </div>
         </div>
 
-        
-        <div className="md:ml-10 mt-6 md:mt-0 flex flex-col justify-between text-white md:w-1/2">
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">{product.title}</h1>
-            <p className="text-lg md:text-xl mb-6">{product.description}</p>
-          </div>
+    
+        <div className="md:w-1/2 mt-8 md:mt-0 md:pl-10 text-gray-800">
+          <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
+          <p className="text-lg text-gray-700 mb-6">{product.description}</p>
 
-          <div className="mt-4 space-y-2">
-            <h2 className="text-2xl font-semibold mb-2">Contact Us</h2>
-            <p>📱 WhatsApp: <span className="font-semibold">0345-5005530</span></p>
-            <p>📞 Call: <span className="font-semibold">0346-5330086</span> (Ifthikhar Ahmed)</p>
-            <p>📞 Call: <span className="font-semibold">0300-5341424</span> (Arshad Mehmood)</p>
-            <a
-              href="https://wa.me/923455005530"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition"
-            >
-              💬 Chat on WhatsApp
-            </a>
-          </div>
+          <hr className="border-gray-300 mb-4" />
+
+          <h2 className="text-xl font-semibold mb-2">Contact Us</h2>
+          <p className="text-gray-700">📞 +92 300 1234567</p>
+          <p className="text-gray-700">📍 Islamabad, Pakistan</p>
+          <p className="text-gray-700">✉️ info@stonemarble.com</p>
+          <a
+            href="https://wa.me/923001234567"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 bg-green-500 hover:bg-green-600 text-white font-medium px-5 py-2 rounded-lg transition"
+          >
+            💬 Chat on WhatsApp
+          </a>
         </div>
-
-      
-        <button
-          onClick={() => router.back()}
-          className="absolute top-5 right-5 text-white text-3xl font-bold hover:text-yellow-400"
-        >
-          &times;
-        </button>
       </div>
-    </main>
+    </div>
   );
 }
