@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Products() {
   const products = [
@@ -29,32 +30,30 @@ export default function Products() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
           {products.map((name, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-transform transform hover:-translate-y-2"
-            >
-              <div className="overflow-hidden">
-                <Image
-                  src={`/images/product${20 + index}.jpeg`}
-                  alt={name}
-                  width={400}
-                  height={300}
-                  className="object-cover w-full h-60 sm:h-64 hover:scale-110 transition-transform duration-500"
-                />
+            <Link key={index} href={`/image/${20 + index}`}>
+              <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-transform transform hover:-translate-y-2 cursor-pointer">
+                <div className="overflow-hidden">
+                  <Image
+                    src={`/images/product${20 + index}.jpeg`}
+                    alt={name}
+                    width={400}
+                    height={300}
+                    className="object-cover w-full h-60 sm:h-64 hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4 sm:p-5 text-center">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+                    {name}
+                  </h3>
+                  <p className="text-gray-600 text-sm sm:text-base">
+                    Premium quality {name} stone for interiors and exteriors.
+                  </p>
+                </div>
               </div>
-              <div className="p-4 sm:p-5 text-center">
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
-                  {name}
-                </h3>
-                <p className="text-gray-600 text-sm sm:text-base">
-                  Premium quality {name} stone for interiors and exteriors.
-                </p>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
     </main>
   );
 }
-
