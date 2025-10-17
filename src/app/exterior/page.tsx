@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ExteriorPage() {
-
   const exteriors = [
     { id: 7, name: "Modern House Facade", category: "White" },
     { id: 8, name: "Outdoor Patio Design", category: "Grey" },
@@ -14,10 +13,8 @@ export default function ExteriorPage() {
     { id: 12, name: "Swimming Pool Area", category: "Grey" },
   ];
 
-  
   const categories = ["All", "White", "Grey", "Black", "Red", "Brown", "Golden"];
   const [selectedCategory, setSelectedCategory] = useState("All");
-
 
   const filteredExteriors =
     selectedCategory === "All"
@@ -30,7 +27,6 @@ export default function ExteriorPage() {
         Exterior Design Gallery
       </h1>
 
-    
       <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
         {categories.map((cat) => (
           <button
@@ -47,7 +43,6 @@ export default function ExteriorPage() {
         ))}
       </div>
 
-      
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
         {filteredExteriors.map((item) => (
           <Link key={item.id} href={`/image/${item.id}`}>
