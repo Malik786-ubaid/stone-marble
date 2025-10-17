@@ -26,27 +26,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      
+
       <section className="py-16 sm:py-20 px-4 sm:px-6 text-center max-w-5xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
           About Stone Marble
         </h2>
         <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-          At Stone Marble, we specialize in providing premium quality marble,
-          granite, and natural stones sourced from the finest quarries. Our
-          products enhance both residential and commercial spaces with luxury,
-          durability, and style.
+          At Stone Marble, we specialize in premium marble, granite, and natural stones sourced from the finest quarries. Our products enhance both residential and commercial spaces with luxury, durability, and style.
         </p>
       </section>
 
-    
+      
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-gray-900">
             Featured Stones
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-            {[20, 21, 22].map((id) => (
+            {[20,21,22].map((id) => (
               <Link key={id} href={`/image/${id}`}>
                 <div className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition cursor-pointer">
                   <Image
@@ -78,7 +75,7 @@ export default function HomePage() {
             Interior Highlights
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((id) => (
+            {[1,2,3].map((id) => (
               <Link key={id} href={`/image/${id}`}>
                 <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl cursor-pointer transition transform hover:-translate-y-1">
                   <Image
@@ -95,14 +92,14 @@ export default function HomePage() {
         </div>
       </section>
 
-  
+    
       <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-gray-900">
             Exterior Highlights
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[7, 8, 9].map((id) => (
+            {[7,8,9].map((id) => (
               <Link key={id} href={`/image/${id}`}>
                 <div className="overflow-hidden rounded-lg shadow-md hover:shadow-xl cursor-pointer transition transform hover:-translate-y-1">
                   <Image
@@ -118,33 +115,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-    
-      <section className="py-16 sm:py-20 bg-gray-100 text-center px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
-            Contact Us
-          </h2>
-          <p className="text-gray-600 text-base sm:text-lg mb-8">
-            Have any questions or want to order premium marble? <br />
-            Contact us directly on WhatsApp — we’d love to help!
-          </p>
-
-          <a
-            href="https://wa.me/923485874072"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-green-600 text-white px-6 sm:px-8 py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-green-700 transition"
-          >
-            💬 Chat on WhatsApp
-          </a>
-
-          <div className="mt-8 text-gray-700 text-sm sm:text-base">
-            <p>📞 Phone: +92 3455005530</p>
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 }
