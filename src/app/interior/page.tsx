@@ -27,7 +27,6 @@ export default function InteriorPage() {
         Interior Design Gallery
       </h1>
 
-  
       <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
         {categories.map((cat) => (
           <button
@@ -44,7 +43,6 @@ export default function InteriorPage() {
         ))}
       </div>
 
-    
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
         {filteredInteriors.map((item) => (
           <Link key={item.id} href={`/image/${item.id}`}>
