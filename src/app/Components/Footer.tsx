@@ -54,7 +54,7 @@ export default function Footer() {
 
     
       <div className="border-t border-gray-700 text-center py-4 text-sm text-gray-400">
-        <p>© 2025 Awais Marble & Chakwal Stone Showroom. All rights reserved.</p>
+        <p>© 2025 Awais Marble & Chakwal Stone. All rights reserved.</p>
       </div>
     </footer>
   );
