@@ -35,12 +35,12 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-white flex items-start justify-center px-6 py-0"> {/* ← py-0 kiya */}
-      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mt-0"> {/* ← mt-0 */}
-      
-      
+    <div className="min-h-screen bg-white flex items-start justify-center px-6 py-0">
+      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mt-0">
+
+    
         <div className="md:w-1/2 flex justify-center">
-          <div className="w-[400px] h-[400px] relative">
+          <div className="w-[400px] h-[400px] relative border-4 border-gray-400 rounded-xl shadow-lg">
             <Image
               src={product.src}
               alt={product.title}
@@ -50,6 +50,7 @@ export default function ProductDetail() {
           </div>
         </div>
 
+        
         <div className="md:w-1/2 mt-8 md:mt-0 md:pl-10 text-gray-800">
           <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
           <p className="text-lg text-gray-700 mb-6">{product.description}</p>
