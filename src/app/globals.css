@@ -13,11 +13,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Dark Mode Disable (Force Light Look) */
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff; /* Force white even in dark mode */
-    --foreground: #171717; /* Keep text dark */
+    --background: #ffffff; 
+    --foreground: #171717; 
   }
 }
 
@@ -31,7 +31,7 @@ html, body {
   min-height: 100vh;
 }
 
-/* Optional: Prevent black borders on full-screen flex containers */
+
 div {
   background-color: transparent;
 }
